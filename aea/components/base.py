@@ -225,7 +225,7 @@ class _CheckUsedDependencies:
 
         used_packages: Dict[PackageIdPrefix, Set[Path]] = defaultdict(set)
         for python_module in aea_package_root_dir.rglob("*.py"):
-            module_content = python_module.read_text()
+            module_content = python_module.read_text(encoding="utf-8")
             module_package_id_prefixes = cls._extract_imported_packages_as_ids(
                 module_content
             )
