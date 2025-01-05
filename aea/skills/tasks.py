@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # ------------------------------------------------------------------------------
 #
-#   Copyright 2022 Valory AG
+#   Copyright 2022-2025 Valory AG
 #   Copyright 2018-2021 Fetch.AI Limited
 #
 #   Licensed under the Apache License, Version 2.0 (the "License");
@@ -216,7 +216,7 @@ class TaskManager(WithLogger):
 
             self._results_by_task_id[task_id] = async_result
             if self._logger:  # pragma: nocover
-                self._logger.info(f"Task <{func}{args}> set. Task id is {task_id}")
+                self._logger.debug(f"Task <{func}{args}> set. Task id is {task_id}")
             return task_id
 
     def get_task_result(self, task_id: int) -> AsyncResult:
